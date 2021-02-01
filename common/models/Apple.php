@@ -57,9 +57,9 @@ class Apple extends ActiveRecord {
     public static function createRandom() {
         $rand = rand(1, 10);
         for ($i = 1; $i <= $rand; $i++) {
-            $rand = rand(1, 48);
+            $hour = rand(1, 48);
             $apple = new self();
-            $apple->created_at = date('Y-m-d H:i:s', strtotime(" - {$rand} HOUR"));
+            $apple->created_at = date('Y-m-d H:i:s', strtotime(" - {$hour} HOUR"));
             $apple->user_id = Yii::$app->user->id;
             $apple->color = self::randColor();
             $apple->save();
